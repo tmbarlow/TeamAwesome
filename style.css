@@ -1,0 +1,32 @@
+#ttl {
+    font-size: 80px;
+    text-align: center;
+}
+#movieImput {
+    margin: 0 10% 0 10%;
+}
+#submitBtn {
+    margin: 1% 5% 0 80%;
+}
+#infoJmbo {
+    margin: 1% 0 0 0;
+}
+#leftjmbo {
+    background: grey;
+padding: 0 0 10% 0;
+}
+#midjmbo {
+    background: blue;
+    padding: 0 0 10% 0;
+    
+}
+#rightjmbo {
+    background: red;
+    padding: 0 0 10% 0;
+    
+}
+#des {
+    margin: 2% 0 0 0;
+    text-align: center;
+    align-content: center;
+}
