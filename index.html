@@ -1,9 +1,71 @@
+<!DOCTYPE>
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<html lang="en">
+    <head>
+        <title>Movies24/7</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+         <div class="row">
+             <div class="col-md-12">
+              <div id="ttl" class="container">
+                     <header>Movies 24/7</header>
+             </div>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                        <div id="movieImput" class="form-group">
+                                <label for="usr">Movie:</label>
+                                <input type="text" class="form-control" id="usr">
+                         </div>         
+                </div>
 
-</body>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <button id="submitBtn" type="button" class="btn btn-success">Submit</button>
+
+            </div>
+        </div>
+        <div class="container">
+            <div id="infoJmbo" class="jumbotron">
+                <div class="row">
+                    <!--the 3 colums-->
+                    
+                    <div id="leftjmbo" class="col-md-4">
+                        <!--create div for img here-->
+                    </div>
+                    
+                            <div id="midjmbo" class="col-md-4">
+                                <!--create div for img here-->
+                            </div>
+                            
+                        <div id="rightjmbo" class="col-md-4">
+                            <!--create div for img here-->
+                         </div>      
+                </div>
+            </div>
+        </div>
+        <div id="des" class="container">
+            <div class="jumbotron">
+                <p>Description location //create paragascript</p>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="container">
+            <div class="jumbotron">
+
+            </div>
+            </div>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="script.js"></script>      
+    </body>
 </html>
