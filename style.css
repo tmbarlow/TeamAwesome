@@ -14,19 +14,27 @@
 #leftjmbo {
     background: grey;
 padding: 0 0 10% 0;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 #midjmbo {
-    background: blue;
+    background: grey;
     padding: 0 0 10% 0;
     
 }
 #rightjmbo {
-    background: red;
+    background: grey;
     padding: 0 0 10% 0;
     
 }
 #des {
-    margin: 2% 0 0 0;
+    margin-top: 2%;
     text-align: center;
-    align-content: center;
+    
+}
+#rating {
+    text-align: center;
+    font-size: 200%;
+    color: white;
 }
