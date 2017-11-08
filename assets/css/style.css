@@ -1,12 +1,25 @@
 #ttl {
-    font-size: 80px;
+
+    font-size: 800%;
     text-align: center;
+    color: #72b467;
+    font-family: "Courier New", Courier;
+    text-shadow: 4px 4px gray;
+
 }
 #movieImput {
     margin: 0 10% 0 10%;
 }
 #submitBtn {
-    margin: 1% 5% 0 80%;
+
+    margin-left: 35%;
+    margin-top: 2%;
+}
+#submitBtn:hover {
+    background-color: gray; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 #infoJmbo {
     margin: 1% 0 0 0;
@@ -38,3 +51,10 @@ align-items: center;
     font-size: 200%;
     color: white;
 }
+#usr {
+    width: 40%;
+    margin-left: 30%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
