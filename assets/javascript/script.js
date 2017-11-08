@@ -11,11 +11,16 @@
   };
   firebase.initializeApp(config);
 
+
+=======
+  var database = firebase.database();
+
   var movie = $(this).attr("data-name");
  //onkey up function here for 
 
  //onclick for function button
  $('#submitBtn').on("click", function(){
+
    $('#bodyContainer').show();
    $('#des').show();
    $('#footer').show();
@@ -26,18 +31,34 @@
   
    
 
+  var prevMovie = $('#usr').val().trim();
+
+  var firebaseMovie = {
+    movie: prevMovie
+  };
+  database.ref().push(firebaseMovie);
+
+  database.ref().on("child_added", function(snapshot){
+    $('#footer').append("<tr class='table-row' id=" + "'" + snapshot.val() + "'" + ">" + 
+      "<td class='col-xs-12'>" + snapshot.val().movie + "</td>" + "</tr>")
+    console.log(firebaseMovie);
+  }, function(errorObject){
+  });
+
+
   var movieImput = $("#usr").val().trim();
   console.log(movieImput);
 // var for the imdb ajax call
 var trailerQueryURL = "https://api.themoviedb.org/3/search/movie?api_key=1e9f1ca0ed707436520df7bdd6719967&query=" + movieImput;
 
-  var queryURL = "http://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
+
+var queryURL = "http://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
+
 $.ajax({
   url: queryURL, 
   method: "GET"
 }).done(function(response){
   console.log(response);
-
 
 
   //ajax call for amdb
@@ -70,6 +91,7 @@ $.ajax({
 
       // <iframe width="854" height="480" src="https://www.youtube.com/embed/FnCdOQsX5kc" frameborder="0" gesture="media" allowfullscreen></iframe>
     });
+
 });
 
     var imgUrl = response.Poster;
@@ -98,6 +120,7 @@ $.ajax({
 //     //log ratings
         console.log(ratings[i])
 
+
 }
 
 
@@ -105,6 +128,9 @@ $.ajax({
 
 
 })
+
+
+
 
  
 
