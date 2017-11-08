@@ -23,11 +23,14 @@
 
    $('#bodyContainer').show();
    $('#des').show();
-   $('#footer').show();
+   $('#footerHold').show();
  
      $('#plot').empty();
   $('#leftjmbo').empty();
   $('#midjmbo').empty();
+  $('#footer').empty();
+  $('#prevSrch').empty();
+  
   
    
 
@@ -86,8 +89,8 @@ $.ajax({
 
       var youTubeURL = "https://www.youtube.com/embed/" + youTubeVideo;
       console.log(youTubeURL)
-      var trailerImg = $("<iframe>").attr("src", youTubeURL);
-      $('#midjmbo').append(trailerImg);
+      var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
+      $('#plot').append(trailerImg);
 
       // <iframe width="854" height="480" src="https://www.youtube.com/embed/FnCdOQsX5kc" frameborder="0" gesture="media" allowfullscreen></iframe>
     });
@@ -108,7 +111,7 @@ $.ajax({
        var movieImg = $("<img>").attr("src", imgUrl);
 //    //imput descrption into the plot paragraph
 //    //displayes plot in dom
-       $('#plot').text(plot);
+       $('#midjmbo').text(plot);
 //   // var altImg = $('<img>').attr("alt", imgFolder/imageNA.gif);
 //    //console.log(altImg);
 //    //appends the image into the dom in the correct div
@@ -116,7 +119,9 @@ $.ajax({
 //    //for loop for grabing all of the ratings
        for(var i = 0; i < ratings.length; i++){
 //      //appends the ratings into the DOM in order from sorce to value
+        
         $('.rating' + i).append(ratings[i].Source +"<br>" + ratings[i].Value + "<hr>");
+
 //     //log ratings
         console.log(ratings[i])
 
