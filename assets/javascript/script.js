@@ -12,7 +12,7 @@
   firebase.initializeApp(config);
 
 
-=======
+
   var database = firebase.database();
 
   var movie = $(this).attr("data-name");
