@@ -5,7 +5,7 @@
         <title>Movies24/7</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
@@ -20,8 +20,7 @@
             <div class="col-md-12">
                 <div>
                         <div id="movieImput" class="form-group">
-                                <label for="usr">Movie:</label>
-                                <input type="text" class="form-control" id="usr">
+                                <input type="text" class="form-control" id="usr" placeholder="Name a movie here...">
                          </div>         
                 </div>
 
@@ -33,7 +32,7 @@
 
             </div>
         </div>
-        <div class="container">
+        <div hidden id="bodyContainer" class="container">
             <div id="infoJmbo" class="jumbotron">
                 <div class="row">
                     <!--the 3 colums-->
@@ -55,14 +54,14 @@
             </div>
         </div>
         <div class="row">
-        <div id="des" class="container">
+        <div hidden id="des" class="container">
             <div class="jumbotron">
                 <p id="plot"></p>
             </div>
         </div>
         </div>
-        <footer id="footer">
-            <div class="container">
+        <footer>
+            <div hidden id="footer" class="container">
             <div class="jumbotron">
 
             </div>
@@ -70,6 +69,6 @@
         </footer>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="script.js"></script>      
+        <script src="assets/javascript/script.js"></script>      
     </body>
 </html>

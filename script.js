@@ -15,6 +15,15 @@
  //onkey up function here for 
  //onclick for function button
  $('#submitBtn').on("click", function(){
+    //$('#usr').val("")
+    //$("#plot").empty();
+    //$("#leftjmbo").empty();
+    //$("*").empty();
+    
+    
+
+    
+  
   
   var movieImput = $("#usr").val().trim();
   console.log(movieImput);
@@ -55,6 +64,7 @@
     console.log(ratings[i])
 
   }
+ 
 
 
 
