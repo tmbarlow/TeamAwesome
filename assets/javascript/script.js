@@ -168,8 +168,8 @@ $("#footer").on("click", "#prevMovie", function() {
 
 
 
-})
 
 
-})
+
+
 
