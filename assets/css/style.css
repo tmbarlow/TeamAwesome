@@ -25,20 +25,25 @@
     margin: 1% 0 0 0;
 }
 #leftjmbo {
-    background: grey;
+   
 padding: 0 0 10% 0;
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 #midjmbo {
-    background: grey;
+    
     padding: 0 0 10% 0;
-    font-size: 38px;
+
+    color: #4e4e4e;
+    font-size: 180%;
+    text-align: center;
+
     
 }
 #rightjmbo {
-    background: grey;
+    
     padding: 0 0 10% 0;
     font-size: 30px;
     
@@ -51,12 +56,27 @@ align-items: center;
 #rating {
     text-align: center;
     font-size: 200%;
-    color: white;
+    color: #4e4e4e;
 }
 #usr {
     width: 40%;
     margin-left: 30%;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#footer {
+    margin-left: 40%;
+    color: #4e4e4e;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px gray;
+    
+}
+
+#prevSrch {
+    text-align: center;
+    text-shadow: 2px 2px gray;
+    color: #4e4e4e;
+    font-size: 50px;
 }
 
 

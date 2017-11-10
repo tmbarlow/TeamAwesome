@@ -29,7 +29,9 @@
   $('#midjmbo').empty();
   $('#footer').empty();
   $('#prevSrch').empty();
+
    $('#rightjmbo').empty(); 
+
   
    
 
@@ -121,12 +123,15 @@ $.ajax({
        var movieImg = $("<img>").attr("src", imgUrl);
 //    //imput descrption into the plot paragraph
 //    //displayes plot in dom
+
        $('#midjmbo').text("Plot: " + plot);
+
 //   // var altImg = $('<img>').attr("alt", imgFolder/imageNA.gif);
 //    //console.log(altImg);
 //    //appends the image into the dom in the correct div
         $('#leftjmbo').append(movieImg);
 //    //for loop for grabing all of the ratings
+
 
 
         $('#rightjmbo').append(rating1);
