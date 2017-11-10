@@ -12,7 +12,6 @@ var storeMovies = [];
   firebase.initializeApp(config);
 
 
-
   var database = firebase.database();
 
   var movie = $(this).attr("data-name");
@@ -33,9 +32,8 @@ function showMovie(clickedMovie){
   $('#midjmbo').empty();
   $('#footer').empty();
   $('#prevSrch').empty();
+  $('#rightjmbo').empty();
   
-  
-   
 
   var prevMovie = $('#usr').val().trim();
 
@@ -91,14 +89,25 @@ function showMovie(clickedMovie){
         var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
         $('#plot').append(trailerImg);
 
-        // <iframe width="854" height="480" src="https://www.youtube.com/embed/FnCdOQsX5kc" frameborder="0" gesture="media" allowfullscreen></iframe>
       });
 
     });
 
     var imgUrl = response.Poster;
      //grabs array for the ratings from 0-3 dif sorces
-    var ratings = response.Ratings
+    // var ratings = response.Ratings
+        var ratings1 = response.Ratings[0]
+        var rating1= ratings1.Source
+        var ratingval1= ratings1.Value
+
+        var ratings2 = response.Ratings[1]
+        var rating2= ratings2.Source
+        var ratingval2= ratings2.Value
+
+        var ratings3 = response.Ratings[2]
+        var rating3= ratings3.Source
+        var ratingval3= ratings3.Value
+
       //grabs plot from json 
     var plot = response.Plot
     // console.log(ratingSrc1);
@@ -110,23 +119,30 @@ function showMovie(clickedMovie){
     var movieImg = $("<img>").attr("src", imgUrl);
     //imput descrption into the plot paragraph
     //displayes plot in dom
-    $('#midjmbo').text(plot);
+    $('#midjmbo').text("Plot: " + plot );
     // var altImg = $('<img>').attr("alt", imgFolder/imageNA.gif);
     //console.log(altImg);
     //appends the image into the dom in the correct div
     $('#leftjmbo').append(movieImg);
    //for loop for grabing all of the ratings
-    for(var i = 0; i < ratings.length; i++){
+   // for(var i = 0; i < ratings.length; i++){
       //appends the ratings into the DOM in order from sorce to value
     
-    $('.rating' + i).append(ratings[i].Source +"<br>" + ratings[i].Value + "<hr>");
+    //$('.rating' + i).append(ratings[i].Source +"<br>" + ratings[i].Value + "<hr>");
 
      //log ratings
-     console.log(ratings[i])
-
-    }
+   //  console.log(ratings[i])
+   //   }
+        $('#rightjmbo').append(rating1);
+        $('#rightjmbo').append(": " + ratingval1 + "<br>");
+        $('#rightjmbo').append(rating2);
+        $('#rightjmbo').append(": " + ratingval2 + "<br>");
+        $('#rightjmbo').append(rating3);
+        $('#rightjmbo').append(": " + ratingval3 + "<br>");
+ 
   })
 }
+
 database.ref().on("value", function(snapshot){
   console.log(snapshot.val(), "this is our snap value")
   var movieNames = [];
@@ -155,16 +171,6 @@ $("#footer").on("click", "#prevMovie", function() {
     "<td class='col-xs-12'>" + storeMovies[i] + "</td>" + "</tr>")
   }
 })
-
-
-
-
-<<<<<<< HEAD
-
-
-=======
- 
->>>>>>> d8399c6160251f94198156c09ddee0d5de4d5e25
 
 // $("#submitBtn").keyup(function(event) {
   //if (event.keyCode === 13) {
