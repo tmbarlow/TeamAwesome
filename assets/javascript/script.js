@@ -1,5 +1,7 @@
+
 var firebaseMovie, clickedMovie ;
 var storeMovies = [];
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDaZ1LcyBesahUykobyTf8n6V54DueEPsM",
@@ -33,7 +35,9 @@ function showMovie(clickedMovie){
   $('#midjmbo').empty();
   $('#footer').empty();
   $('#prevSrch').empty();
-  
+
+   $('#rightjmbo').empty(); 
+
   
    
 
@@ -91,8 +95,11 @@ function showMovie(clickedMovie){
         var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
         $('#plot').append(trailerImg);
 
+  
+
         // <iframe width="854" height="480" src="https://www.youtube.com/embed/FnCdOQsX5kc" frameborder="0" gesture="media" allowfullscreen></iframe>
       });
+
 
     });
 
@@ -157,12 +164,12 @@ $("#footer").on("click", "#prevMovie", function() {
   })
 
 
+// }
 
 
- 
 
-// $("#submitBtn").keyup(function(event) {
-  //if (event.keyCode === 13) {
-   // $("submitBtn").click();
-//}
-//});
+})
+
+
+})
+
