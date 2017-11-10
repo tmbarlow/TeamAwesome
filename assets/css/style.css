@@ -34,11 +34,13 @@ align-items: center;
 #midjmbo {
     background: grey;
     padding: 0 0 10% 0;
+    font-size: 38px;
     
 }
 #rightjmbo {
     background: grey;
     padding: 0 0 10% 0;
+    font-size: 30px;
     
 }
 #des {

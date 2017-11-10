@@ -1,5 +1,4 @@
 
-
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDaZ1LcyBesahUykobyTf8n6V54DueEPsM",
@@ -12,7 +11,7 @@
   firebase.initializeApp(config);
 
 
-=======
+
   var database = firebase.database();
 
   var movie = $(this).attr("data-name");
@@ -23,11 +22,14 @@
 
    $('#bodyContainer').show();
    $('#des').show();
-   $('#footer').show();
+   $('#footerHold').show();
  
      $('#plot').empty();
   $('#leftjmbo').empty();
   $('#midjmbo').empty();
+  $('#footer').empty();
+  $('#prevSrch').empty();
+   $('#rightjmbo').empty(); 
   
    
 
@@ -86,8 +88,8 @@ $.ajax({
 
       var youTubeURL = "https://www.youtube.com/embed/" + youTubeVideo;
       console.log(youTubeURL)
-      var trailerImg = $("<iframe>").attr("src", youTubeURL);
-      $('#midjmbo').append(trailerImg);
+      var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
+      $('#plot').append(trailerImg);
 
       // <iframe width="854" height="480" src="https://www.youtube.com/embed/FnCdOQsX5kc" frameborder="0" gesture="media" allowfullscreen></iframe>
     });
@@ -96,7 +98,18 @@ $.ajax({
 
     var imgUrl = response.Poster;
 //     //grabs array for the ratings from 0-3 dif sorces
-        var ratings = response.Ratings
+        var ratings1 = response.Ratings[0]
+        var rating1= ratings1.Source
+        var ratingval1= ratings1.Value
+
+        var ratings2 = response.Ratings[1]
+        var rating2= ratings2.Source
+        var ratingval2= ratings2.Value
+
+        var ratings3 = response.Ratings[2]
+        var rating3= ratings3.Source
+        var ratingval3= ratings3.Value
+
 // //grabs plot from json 
         var plot = response.Plot
 //     // console.log(ratingSrc1);
@@ -108,20 +121,34 @@ $.ajax({
        var movieImg = $("<img>").attr("src", imgUrl);
 //    //imput descrption into the plot paragraph
 //    //displayes plot in dom
-       $('#plot').text(plot);
+       $('#midjmbo').text("Plot: " + plot);
 //   // var altImg = $('<img>').attr("alt", imgFolder/imageNA.gif);
 //    //console.log(altImg);
 //    //appends the image into the dom in the correct div
         $('#leftjmbo').append(movieImg);
 //    //for loop for grabing all of the ratings
-       for(var i = 0; i < ratings.length; i++){
-//      //appends the ratings into the DOM in order from sorce to value
-        $('.rating' + i).append(ratings[i].Source +"<br>" + ratings[i].Value + "<hr>");
-//     //log ratings
-        console.log(ratings[i])
 
 
-}
+        $('#rightjmbo').append(rating1);
+        $('#rightjmbo').append(": " + ratingval1 + "<br>" );
+        $
+        $('#rightjmbo').append(rating2);
+        $('#rightjmbo').append(": " + ratingval2 + "<br>");
+
+        $('#rightjmbo').append(rating3);
+        $('#rightjmbo').append(": " + ratingval3);
+
+//        for(var i = 0; i < ratings.length; i++){
+// //      //appends the ratings into the DOM in order from sorce to value
+        
+        // $('.rating' + i).append(ratings[i].Source +"<br>" + ratings[i].Value + "<hr>");
+
+// //     //log ratings
+//         console.log(ratings[i])
+
+
+// }
+
 
 
 })
@@ -129,13 +156,3 @@ $.ajax({
 
 })
 
-
-
-
- 
-
-// $("#submitBtn").keyup(function(event) {
-  //if (event.keyCode === 13) {
-   // $("submitBtn").click();
-//}
-//});
