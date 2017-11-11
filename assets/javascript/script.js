@@ -50,7 +50,7 @@ function showMovie(clickedMovie){
   console.log(movieImput);
   
   // var for omdb ajax call
-  var queryURL = "http://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
+  var queryURL = "https://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
   
   // var for the imdb ajax call
   var trailerQueryURL = "https://api.themoviedb.org/3/search/movie?api_key=1e9f1ca0ed707436520df7bdd6719967&query=" + movieImput;
