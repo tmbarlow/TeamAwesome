@@ -48,50 +48,19 @@ function showMovie(clickedMovie){
     var movieImput = clickedMovie;
   }
   console.log(movieImput);
+  
+  // var for omdb ajax call
+  var queryURL = "http://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
+  
   // var for the imdb ajax call
   var trailerQueryURL = "https://api.themoviedb.org/3/search/movie?api_key=1e9f1ca0ed707436520df7bdd6719967&query=" + movieImput;
 
-
-  var queryURL = "http://www.omdbapi.com/?t=" + movieImput +"&y=&plot=short&apikey=40e9cece";
-
+  //ajax call for omdb 
   $.ajax({
     url: queryURL, 
     method: "GET"
   }).done(function(response){
     console.log(response);
-
-
-  //ajax call for amdb
-    $.ajax({
-      url: trailerQueryURL,
-      method: "GET"
-      //response after ajax calls api create function to run response
-    }).done(function(trailerResponse){
-      console.log(trailerResponse);
-      console.log(trailerResponse.results[0].id);
-      //image url for the div that displays movie image
-      
-      var movieId = trailerResponse.results[0].id;
-
-      var movieURL = "https://api.themoviedb.org/3/movie/"+ movieId + "/videos?api_key=1e9f1ca0ed707436520df7bdd6719967&language=en-US";
-
-      $.ajax({
-        url: movieURL, 
-        method: "GET"
-      }).done(function(nextResponse){
-        console.log(nextResponse);
-        console.log(nextResponse.results[0].key);
-
-        var youTubeVideo = nextResponse.results[0].key;
-
-        var youTubeURL = "https://www.youtube.com/embed/" + youTubeVideo;
-        console.log(youTubeURL)
-        var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
-        $('#plot').append(trailerImg);
-
-      });
-
-    });
 
     var imgUrl = response.Poster;
      //grabs array for the ratings from 0-3 dif sorces
@@ -141,6 +110,38 @@ function showMovie(clickedMovie){
         $('#rightjmbo').append(": " + ratingval3 + "<br>");
  
   })
+
+  //ajax call for TheMovieDatabase (TMDb)
+    $.ajax({
+      url: trailerQueryURL,
+      method: "GET"
+    }).done(function(trailerResponse){
+      //console.log(trailerResponse);
+      console.log(trailerResponse.results[0].id);
+      
+      //grabs movie id 
+      var movieId = trailerResponse.results[0].id;
+
+      var movieURL = "https://api.themoviedb.org/3/movie/"+ movieId + "/videos?api_key=1e9f1ca0ed707436520df7bdd6719967&language=en-US";
+
+      $.ajax({
+        url: movieURL, 
+        method: "GET"
+      }).done(function(nextResponse){
+        console.log(nextResponse);
+        console.log(nextResponse.results[0].key);
+
+        //grabs youtube key code
+        var youTubeVideo = nextResponse.results[0].key;
+
+        var youTubeURL = "https://www.youtube.com/embed/" + youTubeVideo;
+        console.log(youTubeURL)
+        var trailerImg = $("<iframe width=854 height=480 allowfullscreen>").attr("src", youTubeURL);
+        $('#plot').append(trailerImg);
+
+      });
+
+    });
 }
 
 database.ref().on("value", function(snapshot){
