@@ -64,17 +64,21 @@ align-items: center;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #footer {
-    margin-left: 40%;
+    margin-left: 34%;
     color: #4e4e4e;
     text-align: center;
     font-size: 30px;
     text-shadow: 2px 2px gray;
-    
+   
+}
+#footerholder {
+    justify-content: center;
 }
 
 #prevSrch {
     text-align: center;
     text-shadow: 2px 2px gray;
-    color: #4e4e4e;
+    color: black;
     font-size: 50px;
 }
+

@@ -77,8 +77,10 @@ function showMovie(clickedMovie){
         var rating3= ratings3.Source
         var ratingval3= ratings3.Value
 
-      //grabs plot from json 
+      //grabs plot, title, release date from json 
     var plot = response.Plot
+    var title = response.Title
+    var year = response.Year
     // console.log(ratingSrc1);
     //i dont think this is used but dont want to delete it yet
     var ratingValue1 = response.Ratings[1].Source;
@@ -88,7 +90,7 @@ function showMovie(clickedMovie){
     var movieImg = $("<img>").attr("src", imgUrl);
     //imput descrption into the plot paragraph
     //displayes plot in dom
-    $('#midjmbo').text("Plot: " + plot );
+    $('#midjmbo').append("<h2>"+ title + "</h2>" + year + "<br><br>" + plot );
     // var altImg = $('<img>').attr("alt", imgFolder/imageNA.gif);
     //console.log(altImg);
     //appends the image into the dom in the correct div
@@ -103,11 +105,11 @@ function showMovie(clickedMovie){
    //  console.log(ratings[i])
    //   }
         $('#rightjmbo').append(rating1);
-        $('#rightjmbo').append(": " + ratingval1 + "<br>");
+        $('#rightjmbo').append(": " + ratingval1 + "<br><br>");
         $('#rightjmbo').append(rating2);
-        $('#rightjmbo').append(": " + ratingval2 + "<br>");
+        $('#rightjmbo').append(": " + ratingval2 + "<br><br>");
         $('#rightjmbo').append(rating3);
-        $('#rightjmbo').append(": " + ratingval3 + "<br>");
+        $('#rightjmbo').append(": " + ratingval3 + "<br><br>");
  
   })
 
